@@ -1,0 +1,102 @@
+{
+  "version": "0.1.0",
+  "name": "comment",
+  "instructions": [
+    {
+      "name": "newComment",
+      "accounts": [
+        {
+          "name": "comment",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "author",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "postPubkey",
+          "type": "publicKey"
+        },
+        {
+          "name": "username",
+          "type": "string"
+        },
+        {
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "name": "image",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "editComment",
+      "accounts": [
+        {
+          "name": "comment",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "author",
+          "isMut": false,
+          "isSigner": true
+        }
+      ],
+      "args": [
+        {
+          "name": "content",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Comment",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "author",
+            "type": "publicKey"
+          },
+          {
+            "name": "postPubkey",
+            "type": "publicKey"
+          },
+          {
+            "name": "timestamp",
+            "type": "i64"
+          },
+          {
+            "name": "username",
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "type": "string"
+          },
+          {
+            "name": "image",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "9rbzD7Ae9doWFbxpZw9SYH6Jzw19Gug7heo5i4eHQHE7"
+  }
+}
